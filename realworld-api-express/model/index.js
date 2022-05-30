@@ -5,7 +5,7 @@ mongoose.connect(dbUrl, {useNewUrlParser: true, useUnifiedTopology: true});
 
 const db = mongoose.connection;
 //当连接失败的时候
-db.on('error', (err)=>{
+db.on('error', (err)=>{ 
     console.log('数据库连接失败',err);
 });
 //当连接成功的时候
