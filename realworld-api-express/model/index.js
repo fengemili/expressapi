@@ -11,7 +11,7 @@ db.on('error', (err)=>{
 //当连接成功的时候
 db.once('open', function() {
   // we're connected!
-    console.log('MongoDB 数据连接成功');
+    console.log('MongoDB 数据连接成功!!!');
 });
 
 //组织导出模型类
