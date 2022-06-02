@@ -1,5 +1,7 @@
 // 0. 加载 Express
 const express = require("express");
+const https = require("https");
+const fs = require("fs");
 const morgan = require("morgan");
 const cors = require("cors");
 const router = require("./router");
@@ -32,3 +34,9 @@ app.use(errorHandler())
 
 // 3. 监听端口号，启动 Web 服务
 app.listen(PORT, () => console.log(`serve is run at http://localhost:${PORT} !`));
+const httpsOption = {
+    key : fs.readFileSync("./https/private.pem"),
+    cert : fs.readFileSync("./https/file.crt"),
+    passphrase: '123456'
+    }
+    https.createServer(httpsOption, app).listen(443);
